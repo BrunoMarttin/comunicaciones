@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EPET N°20 - Registro</title>
+    <link rel="stylesheet" href="../Frontend/css/style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="form-container" aria-labelledby="t-reg">
+        <h2 id="t-reg">Registro</h2>
+
+        <form id="registroForm" novalidate>
+          <label class="form-label" for="email">E-Mail</label>
+          <input
+            class="form-input"
+            id="email"
+            name="email"
+            type="email"
+            required
+          />
+
+          <label class="form-label" for="contrasena">Contraseña</label>
+          <input
+            class="form-input"
+            id="contrasena"
+            name="contrasena"
+            type="password"
+            required
+          />
+
+          <label class="form-label" for="apellido">Apellido</label>
+          <input
+            class="form-input"
+            id="apellido"
+            name="apellido"
+            type="text"
+            required
+          />
+
+          <label class="form-label" for="nombre">Nombre</label>
+          <input
+            class="form-input"
+            id="nombre"
+            name="nombre"
+            type="text"
+            required
+          />
+          <label class="form-label" for="usuario2">Usuario</label>
+          <input
+            class="form-input"
+            id="usuario2"
+            name="usuario2"
+            type="text"
+            required
+          />
+
+          <div class="form-actions">
+            <button class="form-btn" type="submit">Registrarse</button>
+          </div>
+        </form>
+
+        <a class="form-link" href="index.html"
+          >¿Ya tenés cuenta? Iniciar sesión</a
+        >
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("registroForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = document.getElementById("email").value.trim();
+          const contrasena = document.getElementById("contrasena").value.trim();
+          const apellido = document.getElementById("apellido").value.trim();
+          const nombre = document.getElementById("nombre").value.trim();
+          const usuario = document.getElementById("usuario2").value.trim();
+
+          // guardamos como ejemplo en localStorage (solo para esta entrega)
+          const usuarioObj = { email, contrasena, apellido, nombre, usuario };
+          localStorage.setItem("usuarioRegistrado", JSON.stringify(usuarioObj));
+
+          alert("Registro exitoso. Ahora podés iniciar sesión.");
+          window.location.href = "index.html";
+        });
+    </script>
+  </body>
+</html>

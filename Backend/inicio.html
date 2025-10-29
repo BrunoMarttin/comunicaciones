@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Inicio - EPET N°20</title>
+    <link rel="stylesheet" href="../Frontend/css/style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="form-container" style="width: 700px; text-align: center">
+        <h1>Bienvenido</h1>
+        <p id="welcomeText">Cargando...</p>
+        <div style="display: flex; justify-content: center; margin-top: 18px">
+          <button class="form-btn" onclick="cerrarSesion()">
+            Cerrar sesión
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // bloqueo de acceso si no hay sesión
+      if (localStorage.getItem("sesionActiva") !== "true") {
+        alert("Debés iniciar sesión primero");
+        window.location.href = "index.html";
+      } else {
+        const nombre = localStorage.getItem("sesionNombre") || "Usuario";
+        document.getElementById("welcomeText").textContent =
+          "Hola, " + nombre + ". Estás en el cuaderno digital.";
+      }
+
+      function cerrarSesion() {
+        localStorage.removeItem("sesionActiva");
+        localStorage.removeItem("sesionNombre");
+        alert("Sesión cerrada");
+        window.location.href = "index.html";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>EPET N°20 - Iniciar Sesión</title>
+    <link rel="stylesheet" href="../Frontend/css/style.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="form-container" aria-labelledby="titulo">
+        <h1 id="titulo">EPET N°20</h1>
+
+        <form id="loginForm" novalidate>
+          <label class="form-label" for="usuario">Usuario</label>
+          <input
+            class="form-input"
+            id="usuario"
+            name="usuario"
+            type="text"
+            required
+          />
+
+          <label class="form-label" for="contrasena">Contraseña</label>
+          <input
+            class="form-input"
+            id="contrasena"
+            name="contrasena"
+            type="password"
+            required
+          />
+
+          <div class="form-actions">
+            <button class="form-btn" type="submit">Iniciar Sesión</button>
+          </div>
+        </form>
+
+        <a class="form-link" href="registro.html"
+          >¿No tenés cuenta? Registrarse</a
+        >
+      </div>
+    </div>
+
+    <script>
+      // Manejo con localStorage (misma lógica que antes)
+      document
+        .getElementById("loginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const usuario = document.getElementById("usuario").value.trim();
+          const contrasena = document.getElementById("contrasena").value.trim();
+
+          const userData = JSON.parse(
+            localStorage.getItem("usuarioRegistrado")
+          );
+          if (
+            userData &&
+            (usuario === userData.email || usuario === userData.usuario) &&
+            contrasena === userData.contrasena
+          ) {
+            localStorage.setItem("sesionActiva", "true");
+            //guardar nombre para mostrar en inicio
+            localStorage.setItem(
+              "sesionNombre",
+              userData.nombre || userData.usuario || userData.email
+            );
+            window.location.href = "inicio.html";
+          } else {
+            alert("Usuario o contraseña incorrectos");
+          }
+        });
+    </script>
+  </body>
+</html>

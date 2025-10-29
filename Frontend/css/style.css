@@ -1,0 +1,130 @@
+:root {
+  --bg-teal: #008b97; 
+  --card-celeste: #bfeff6; 
+  --accent: #00a3ad; 
+  --black: #000000;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Arial", Helvetica, sans-serif;
+  background-color: var(--bg-teal);
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.form-container {
+  background: var(--card-celeste);
+  width: 680px; 
+  max-width: 95%;
+  border-radius: 32px; 
+  padding: 48px 56px;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.08);
+  text-align: left;
+  position: relative;
+}
+
+.form-container h1,
+.form-container h2 {
+  margin: 0 0 22px 0;
+  text-align: center;
+  font-weight: 900;
+  color: var(--black);
+  letter-spacing: 1px;
+  font-size: 48px; 
+}
+
+.form-label {
+  display: block;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 14px 0 6px 0;
+  color: var(--black);
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 18px;
+  border: 4px solid var(--black); 
+  border-radius: 2px;
+  background: var(--white);
+  outline: none;
+}
+
+.form-row {
+  margin-bottom: 10px;
+}
+
+.form-btn {
+  display: inline-block;
+  margin: 18px auto 0 auto;
+  padding: 12px 28px;
+  font-size: 20px;
+  font-weight: 800;
+  background: var(--accent);
+  color: var(--black);
+  border: 4px solid var(--black);
+  border-radius: 18px;
+  cursor: pointer;
+  text-align: center;
+  box-shadow: inset 0 -4px rgba(0, 0, 0, 0.06);
+}
+
+/* hover */
+.form-btn:hover {
+  background: #008b94;
+  color: white;
+}
+
+.form-link {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  font-size: 16px;
+  color: #2b4fe1; /* azul link */
+  text-decoration: underline;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .form-container {
+    width: 92%;
+    padding: 28px 24px;
+    border-radius: 22px;
+  }
+  .form-container h1,
+  .form-container h2 {
+    font-size: 36px;
+  }
+  .form-label {
+    font-size: 18px;
+  }
+  .form-input {
+    font-size: 16px;
+  }
+  .form-btn {
+    font-size: 18px;
+    padding: 10px 22px;
+  }
+}
