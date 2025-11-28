@@ -11,7 +11,7 @@
       <div class="form-container" aria-labelledby="titulo">
         <h1 id="titulo">EPET N°20</h1>
 
-        <form id="loginForm" novalidate>
+        <form id="loginForm" action="consultas/login.php" method="POST" novalidate>
           <label class="form-label" for="usuario">Usuario</label>
           <input
             class="form-input"
@@ -40,35 +40,5 @@
         >
       </div>
     </div>
-
-    <script>
-      // Manejo con localStorage (misma lógica que antes)
-      document
-        .getElementById("loginForm")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-          const usuario = document.getElementById("usuario").value.trim();
-          const contrasena = document.getElementById("contrasena").value.trim();
-
-          const userData = JSON.parse(
-            localStorage.getItem("usuarioRegistrado")
-          );
-          if (
-            userData &&
-            (usuario === userData.email || usuario === userData.usuario) &&
-            contrasena === userData.contrasena
-          ) {
-            localStorage.setItem("sesionActiva", "true");
-            //guardar nombre para mostrar en inicio
-            localStorage.setItem(
-              "sesionNombre",
-              userData.nombre || userData.usuario || userData.email
-            );
-            window.location.href = "inicio.html";
-          } else {
-            alert("Usuario o contraseña incorrectos");
-          }
-        });
-    </script>
   </body>
 </html>
