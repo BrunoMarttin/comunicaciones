@@ -1,109 +1,146 @@
-/* comunicados.css */
+/* =======================================
+   PALETA y TIPOGRAFÍA (la del CSS base)
+   ======================================= */
+:root {
+  --bg-teal: #008b97;
+  --card-celeste: #bfeff6;
+  --accent: #00a3ad;
+  --black: #000000;
+  --white: #ffffff;
+}
 
-/* Contenedor general */
+* {
+  box-sizing: border-box;
+  font-family: "Arial", Helvetica, sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+  background: var(--bg-teal);
+}
+
+/* ============================
+   CONTENEDOR GENERAL
+   ============================ */
 .page-wrapper {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-height: 90vh;
   padding: 40px 0;
-  background-color: #e0f2fe; /* azul muy claro */
 }
 
-/* Formulario y lista de comunicados */
+/* ============================
+   FORM-CONTAINER
+   ============================ */
 .form-container {
-  background-color: #ffffff;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  background: var(--card-celeste);
+  padding: 48px 56px;
+  border-radius: 32px;
   width: 700px;
   max-width: 95%;
-  margin-bottom: 20px;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.08);
+  margin-top: 30px;
 }
 
-/* Títulos */
 .form-container h2 {
-  color: #1e3a8a;
-  margin-bottom: 20px;
+  font-size: 38px;
   text-align: center;
-}
-
-/* Inputs y textarea */
-.form-input {
-  width: 100%;
-  padding: 12px 15px;
+  font-weight: 900;
   margin-bottom: 20px;
-  border: 1px solid #cbd5e1;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  color: var(--black);
 }
 
-.form-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-  outline: none;
+/* Línea separadora */
+.form-container hr {
+  border: 0;
+  border-top: 3px solid var(--black);
+  margin: 25px 0;
 }
 
-/* Botones */
+/* ============================
+   BOTÓN "Nuevo Comunicado"
+   ============================ */
 .form-btn {
   display: inline-block;
-  background-color: #3b82f6;
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 8px;
+  background: var(--accent);
+  color: var(--black);
+  padding: 12px 28px;
+  border-radius: 18px;
+  border: 4px solid var(--black);
+  font-size: 20px;
+  font-weight: 800;
   text-decoration: none;
-  font-weight: 600;
-  transition: background-color 0.3s;
-  border: none;
   cursor: pointer;
+  box-shadow: inset 0 -4px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
 }
 
 .form-btn:hover {
-  background-color: #2563eb;
+  background: #008b94;
+  color: var(--white);
 }
 
-/* Lista de comunicados */
+.form-btn.crear {
+  display: block;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* ============================
+   COMUNICADOS
+   ============================ */
 .comunicado {
-  padding: 15px 20px;
-  border: 1px solid #cbd5e1;
-  margin-bottom: 15px;
-  border-radius: 10px;
-  background-color: #f0f9ff;
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: var(--white);
+  border: 4px solid var(--black);
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 18px;
+  transition: transform 0.2s;
 }
 
 .comunicado:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
 }
 
-/* Título y contenido de cada comunicado */
 .comunicado h3 {
-  color: #1e40af;
-  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: 900;
+  color: var(--black);
+  margin-bottom: 8px;
 }
 
 .comunicado p {
-  color: #1e3a8a;
-  margin-bottom: 8px;
-  line-height: 1.5;
+  font-size: 18px;
+  color: var(--black);
+  margin-bottom: 10px;
 }
 
 .comunicado small {
-  color: #64748b;
+  font-size: 14px;
+  color: #333;
 }
 
-/* Enlace para nuevo comunicado */
-.form-container .form-btn.crear {
-  margin-bottom: 20px;
-  display: block;
-  text-align: center;
-}
-
-/* Responsivo */
+/* ============================
+   RESPONSIVE
+   ============================ */
 @media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
   .form-container {
-    padding: 20px;
+    padding: 28px 24px;
+    border-radius: 22px;
+  }
+
+  .form-container h2 {
+    font-size: 32px;
+  }
+
+  .form-btn {
+    font-size: 18px;
   }
 }

@@ -20,7 +20,33 @@ $lista = $conexion->query($sql);
     <meta charset="utf-8">
     <title>Comunicados</title>
     <link rel="stylesheet" href="../../Frontend/css/comunicado.css">
-    <link rel="stylesheet" href="../../Frontend/css/style.css">
+    <style>
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1e3a8a;
+            /* azul oscuro */
+            padding: 10px 20px;
+            color: #fff;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 10px;
+            background-color: #3b82f6;
+            /* azul más claro */
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #2563eb;
+        }
+    </style>
 </head>
 
 <body>
