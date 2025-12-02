@@ -1,146 +1,184 @@
-/* =======================================
-   PALETA y TIPOGRAFÍA (la del CSS base)
-   ======================================= */
-:root {
-  --bg-teal: #008b97;
-  --card-celeste: #bfeff6;
-  --accent: #00a3ad;
-  --black: #000000;
-  --white: #ffffff;
-}
-
+/* ============================
+   PALETA + TIPOGRAFÍA
+   ============================ */
 * {
-  box-sizing: border-box;
-  font-family: "Arial", Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: "Times New Roman", Times, serif;
 }
 
-html,
 body {
-  margin: 0;
-  background: var(--bg-teal);
+    background-color: #dbeafe; /* celeste muy claro */
+}
+
+/* ============================
+   NAVBAR
+   ============================ */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e3a8a; /* azul oscuro */
+    padding: 12px 20px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+    background-color: #3b82f6; /* azul claro suave */
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #2563eb; /* azul más intenso */
 }
 
 /* ============================
    CONTENEDOR GENERAL
    ============================ */
 .page-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
 }
 
 /* ============================
-   FORM-CONTAINER
+   TARJETA PRINCIPAL
    ============================ */
 .form-container {
-  background: var(--card-celeste);
-  padding: 48px 56px;
-  border-radius: 32px;
-  width: 700px;
-  max-width: 95%;
-  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.08);
-  margin-top: 30px;
+    background-color: #ffffff; /* blanca */
+    padding: 40px 45px;
+    border-radius: 14px;
+    width: 750px;
+    max-width: 95%;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
 }
 
 .form-container h2 {
-  font-size: 38px;
-  text-align: center;
-  font-weight: 900;
-  margin-bottom: 20px;
-  color: var(--black);
+    color: #1e3a8a;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-/* Línea separadora */
+/* Línea divisoria */
 .form-container hr {
-  border: 0;
-  border-top: 3px solid var(--black);
-  margin: 25px 0;
+    border: 0;
+    border-top: 2px solid #1e3a8a;
+    margin: 25px 0;
 }
 
 /* ============================
-   BOTÓN "Nuevo Comunicado"
+   BOTÓN NUEVO COMUNICADO
    ============================ */
 .form-btn {
-  display: inline-block;
-  background: var(--accent);
-  color: var(--black);
-  padding: 12px 28px;
-  border-radius: 18px;
-  border: 4px solid var(--black);
-  font-size: 20px;
-  font-weight: 800;
-  text-decoration: none;
-  cursor: pointer;
-  box-shadow: inset 0 -4px rgba(0, 0, 0, 0.06);
-  transition: 0.3s;
+    display: inline-block;
+    background-color: #3b82f6;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
 .form-btn:hover {
-  background: #008b94;
-  color: var(--white);
+    background-color: #2563eb;
 }
 
 .form-btn.crear {
-  display: block;
-  text-align: center;
-  margin-bottom: 25px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 /* ============================
-   COMUNICADOS
+   TARJETAS DE CADA COMUNICADO
    ============================ */
 .comunicado {
-  background: var(--white);
-  border: 4px solid var(--black);
-  padding: 20px;
-  border-radius: 20px;
-  margin-bottom: 18px;
-  transition: transform 0.2s;
+    background: #ffffff;
+    border-left: 5px solid #3b82f6;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 18px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.15s ease;
 }
 
 .comunicado:hover {
-  transform: translateY(-3px);
+    transform: translateY(-3px);
 }
 
 .comunicado h3 {
-  font-size: 24px;
-  font-weight: 900;
-  color: var(--black);
-  margin-bottom: 8px;
+    color: #1e3a8a;
+    font-size: 22px;
+    margin-bottom: 6px;
 }
 
 .comunicado p {
-  font-size: 18px;
-  color: var(--black);
-  margin-bottom: 10px;
+    color: #1e40af; /* azul suave del texto */
+    margin-bottom: 10px;
 }
 
 .comunicado small {
-  font-size: 14px;
-  color: #333;
+    color: #555;
+    font-size: 14px;
+}
+/* ============================
+   INPUTS Y TEXTAREA
+   ============================ */
+.form-container label {
+    display: block;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+    font-size: 16px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: 2px solid #3b82f6;  /* azul claro */
+    border-radius: 8px;
+    background: #fff;
+    font-size: 16px;
+    color: #1e3a8a;
+    transition: 0.3s;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: #2563eb; /* azul hover */
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+textarea.form-input {
+    resize: vertical;
+    min-height: 120px;
 }
 
 /* ============================
    RESPONSIVE
    ============================ */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
 
-  .form-container {
-    padding: 28px 24px;
-    border-radius: 22px;
-  }
+    .form-container {
+        padding: 28px 22px;
+    }
 
-  .form-container h2 {
-    font-size: 32px;
-  }
-
-  .form-btn {
-    font-size: 18px;
-  }
+    .form-container h2 {
+        font-size: 28px;
+    }
 }

@@ -30,6 +30,7 @@ $lista = $conexion->query($sql);
             /* azul oscuro */
             padding: 10px 20px;
             color: #fff;
+             font-family: "Times New Roman", Times, serif;
         }
 
         .navbar a {
